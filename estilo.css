@@ -1,0 +1,120 @@
+/* Mapi: hábitos con fotos. Estilo compartido de la portada, la privacidad y el soporte. */
+:root {
+  color-scheme: light dark;
+  --cielo-1: #0E1230;
+  --cielo-2: #26337A;
+  --luna: #FFC83D;
+  --fondo: #FBF8F1;
+  --tarjeta: #FFFFFF;
+  --texto: #1C1E2B;
+  --suave: #555B70;
+  --borde: #E8E1CF;
+  --enlace: #2D46B0;
+  --pendiente: #FFE9A6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo: #0B0F28;
+    --tarjeta: #151A3D;
+    --texto: #F3F1EA;
+    --suave: #B9BCD0;
+    --borde: #283063;
+    --enlace: #FFD666;
+    --pendiente: #5A4710;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+a { color: var(--enlace); text-underline-offset: 2px; }
+a:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--luna);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.cielo {
+  background: linear-gradient(180deg, var(--cielo-1) 0%, var(--cielo-2) 100%);
+  color: #FFFFFF;
+  text-align: center;
+  padding: 40px 20px 32px;
+}
+.cielo img {
+  display: block;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 14px;
+  filter: drop-shadow(0 6px 22px rgba(255, 200, 61, 0.35));
+}
+.cielo h1 {
+  margin: 0;
+  font-family: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 1.2;
+}
+.cielo p { margin: 8px 0 0; color: #D7DBF5; }
+.cielo nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 20px;
+  margin-top: 18px;
+}
+.cielo nav a { color: #FFFFFF; font-weight: 600; }
+.cielo nav a[aria-current="page"] { color: var(--luna); text-decoration: none; }
+
+main { max-width: 720px; margin: 0 auto; padding: 28px 20px 40px; overflow-wrap: break-word; }
+
+h2 {
+  font-family: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 1.3;
+  margin: 36px 0 8px;
+}
+h3 { font-size: 18px; margin: 22px 0 4px; }
+p, ul { margin: 8px 0; }
+li { margin: 4px 0; }
+
+.tarjeta {
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 18px;
+  padding: 18px 20px;
+  margin: 16px 0;
+}
+.tarjeta > h2:first-child { margin-top: 0; }
+
+.nota { color: var(--suave); font-size: 15px; }
+
+mark.pendiente {
+  background: var(--pendiente);
+  color: inherit;
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+details { border-top: 1px solid var(--borde); padding: 12px 0; }
+details:last-of-type { border-bottom: 1px solid var(--borde); }
+summary { cursor: pointer; font-weight: 600; }
+details p { margin: 8px 0 0; }
+
+footer {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+  color: var(--suave);
+  font-size: 14px;
+  text-align: center;
+}
+footer a { color: var(--suave); }
