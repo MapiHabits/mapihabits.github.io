@@ -43,16 +43,37 @@ a:focus-visible, summary:focus-visible {
 }
 
 .cielo {
-  background: linear-gradient(180deg, var(--cielo-1) 0%, var(--cielo-2) 100%);
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(520px 260px at 50% 30%, rgba(255, 200, 61, 0.18), transparent 70%),
+    linear-gradient(180deg, var(--cielo-1) 0%, var(--cielo-2) 100%);
   color: #FFFFFF;
   text-align: center;
   padding: 40px 20px 32px;
 }
+/* Las mismas estrellas que la portada. */
+.cielo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1.6px 1.6px at 8% 22%, #fff 50%, transparent 52%),
+    radial-gradient(1.2px 1.2px at 18% 70%, #fff 50%, transparent 52%),
+    radial-gradient(1.8px 1.8px at 30% 14%, #fff 50%, transparent 52%),
+    radial-gradient(1.2px 1.2px at 64% 18%, #fff 50%, transparent 52%),
+    radial-gradient(1.6px 1.6px at 78% 62%, #fff 50%, transparent 52%),
+    radial-gradient(1.3px 1.3px at 90% 26%, #fff 50%, transparent 52%);
+  opacity: 0.8;
+}
+.cielo > * { position: relative; }
 .cielo img {
   display: block;
   width: 96px;
   height: 96px;
   margin: 0 auto 14px;
+  border-radius: 22px;
   filter: drop-shadow(0 6px 22px rgba(255, 200, 61, 0.35));
 }
 .cielo h1 {
@@ -70,8 +91,15 @@ a:focus-visible, summary:focus-visible {
   gap: 8px 20px;
   margin-top: 18px;
 }
-.cielo nav a { color: #FFFFFF; font-weight: 600; }
-.cielo nav a[aria-current="page"] { color: var(--luna); text-decoration: none; }
+.cielo nav a {
+  color: #FFFFFF;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+}
+.cielo nav a[aria-current="page"] { background: var(--luna); color: var(--cielo-1); }
 
 main { max-width: 720px; margin: 0 auto; padding: 28px 20px 40px; overflow-wrap: break-word; }
 

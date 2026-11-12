@@ -2,35 +2,329 @@
 <html lang="es-MX">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Mapi: hábitos con fotos</title>
-  <meta name="description" content="Mapi es un mapache que te acompaña a cumplir tus tareas del día: cada una con una foto, y un freno amable a las apps mientras falten.">
+  <meta name="description" content="Mapi es un mapache que te acompaña a cumplir tus tareas del día. Cumples cada una con una foto y, mientras falten, un escudo cubre las apps que tú elijas.">
+  <meta name="theme-color" content="#0E1230">
   <link rel="icon" href="mapi.png">
-  <link rel="stylesheet" href="estilo.css">
+  <link rel="apple-touch-icon" href="mapi.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:title" content="Mapi: hábitos con fotos">
+  <meta property="og:description" content="Primero cumples, luego abres. Un mapache que te acompaña a cumplir tus tareas del día.">
+  <meta property="og:url" content="https://mapihabits.github.io/">
+  <meta property="og:image" content="https://mapihabits.github.io/img/compartir.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="portada.css">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
-  <header class="cielo">
-    <img src="mapi.png" alt="Mapi, un mapache sonriente sobre fondo amarillo">
-    <h1>Mapi</h1>
-    <p>Hábitos con fotos y un freno amable a las apps.</p>
-    <nav aria-label="Páginas">
-      <a href="index.html" aria-current="page">Inicio</a>
+  <a class="saltar" href="#contenido">Ir al contenido</a>
+
+  <header class="barra">
+    <a class="marca" href="./" aria-label="Mapi, inicio">
+      <img src="mapi.png" alt="" width="34" height="34">
+      <span>Mapi</span>
+    </a>
+    <nav class="barra-enlaces" aria-label="Secciones">
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#escudo">Escudo</a>
+      <a href="#enfoque">Enfoque</a>
+      <a href="#racha">Racha</a>
+      <a href="#plus">Plus</a>
       <a href="soporte.html">Soporte</a>
-      <a href="privacidad.html">Privacidad</a>
     </nav>
+    <a class="boton boton-luna boton-chico" href="#descargar">Muy pronto</a>
   </header>
 
-  <main>
-    <section class="tarjeta">
-      <p>Mapi es un mapache que te acompaña a cumplir lo que te propones cada día. Cada tarea se cumple con una foto, y mientras falten tareas, Mapi frena las apps que tú elijas. Al cumplir la última, tus apps quedan libres y cierras el día llenando la luna.</p>
-      <p>Sin cuentas, sin anuncios y sin servidores nuestros: tus datos se quedan en tu iPhone y en tu iCloud.</p>
-      <p class="nota">Pronto en el App Store, para iPhone con iOS 26 o posterior.</p>
+  <main id="contenido">
+    <!-- Portada: la noche de Mapi, con su luna. -->
+    <section class="hero">
+      <div class="estrellas" aria-hidden="true"></div>
+      <div class="estrellas estrellas-2" aria-hidden="true"></div>
+      <div class="hero-grid">
+        <div class="hero-texto">
+          <p class="etiqueta">Hábitos con fotos para iPhone</p>
+          <h1>Primero cumples, <mark>luego abres.</mark></h1>
+          <p class="entrada">Mapi es un mapache que te acompaña a cumplir tus tareas del día. Cumples cada una con una foto y, mientras falten, un escudo cubre las apps que tú elijas.</p>
+          <div class="acciones">
+            <!-- Cuando Mapi esté publicada, cambia este span por:
+                 <a class="boton boton-luna" href="https://apps.apple.com/app/id6831907210">Descargar en el App Store</a> -->
+            <span class="boton boton-luna boton-pronto">Muy pronto en el App Store</span>
+            <a class="boton boton-claro" href="#como-funciona">Mira cómo funciona</a>
+          </div>
+          <p class="nota-hero">Gratis · iPhone con iOS 26 o posterior · En español</p>
+        </div>
+        <div class="hero-escena">
+          <div class="luna" aria-hidden="true"></div>
+          <div class="colinita" aria-hidden="true"></div>
+          <img class="mapi-hero" src="img/mapi-saluda.webp" alt="Mapi, un mapache, saludando frente a la luna" width="900" height="900" fetchpriority="high">
+        </div>
+      </div>
+      <svg class="colinas" viewBox="0 0 1440 170" preserveAspectRatio="none" aria-hidden="true">
+        <path class="colina-atras" d="M0 96 C 220 40 420 40 640 82 C 860 124 1060 120 1240 74 C 1330 52 1400 50 1440 56 L1440 170 L0 170 Z"/>
+        <path class="colina-frente" d="M0 132 C 260 92 520 96 760 124 C 1000 152 1220 146 1440 112 L1440 170 L0 170 Z"/>
+      </svg>
+    </section>
+
+    <!-- Así funciona -->
+    <section class="seccion" id="como-funciona">
+      <div class="contenedor">
+        <p class="etiqueta etiqueta-tinta">Así funciona</p>
+        <h2>Tres pasos, todos los días</h2>
+        <ol class="pasos">
+          <li class="paso revela">
+            <div class="telefono"><img src="img/app-inicio.webp" alt="Inicio de Mapi con las tareas del día" width="600" height="1304" loading="lazy"></div>
+            <span class="numero" aria-hidden="true">1</span>
+            <h3>Elige tus tareas</h3>
+            <p>Leer, hacer ejercicio, estudiar inglés… Tú decides qué cumplir cada día.</p>
+          </li>
+          <li class="paso revela">
+            <div class="telefono"><img src="img/app-foto.webp" alt="Una foto de un libro sellada con la patita de Mapi" width="600" height="1304" loading="lazy"></div>
+            <span class="numero" aria-hidden="true">2</span>
+            <h3>Tu foto es la prueba</h3>
+            <p>Cumples cada tarea con una foto del momento, y Mapi la sella con su patita.</p>
+          </li>
+          <li class="paso revela">
+            <div class="telefono"><img src="img/app-luna.webp" alt="Mapi celebra con los brazos arriba: doce lunas" width="600" height="1304" loading="lazy"></div>
+            <span class="numero" aria-hidden="true">3</span>
+            <h3>Llena la luna</h3>
+            <p>Con la última tarea se llena la luna del día y tus apps se abren solas.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- El escudo -->
+    <section class="seccion noche" id="escudo">
+      <div class="estrellas estrellas-suaves" aria-hidden="true"></div>
+      <div class="contenedor dos">
+        <div class="texto revela">
+          <p class="etiqueta">El escudo</p>
+          <h2>Tus apps, cuando cumplas</h2>
+          <p>Mientras falte una tarea, Mapi cubre con un escudo las apps que tú elijas, con Tiempo en pantalla de Apple. Cuando cumples la última, se abren solas.</p>
+          <ul class="lista">
+            <li>Tú eliges qué apps cubre.</li>
+            <li>Si abres una antes de tiempo, el escudo te dice qué te falta.</li>
+            <li>Ves cuántas veces te frenó cada semana.</li>
+          </ul>
+        </div>
+        <div class="visual revela">
+          <div class="telefono"><img src="img/app-escudo.webp" alt="Pantalla del escudo: Yo cuido tus apps" width="600" height="1304" loading="lazy"></div>
+          <img class="mapi-lado mapi-izq" src="img/mapi-lentes.webp" alt="" width="560" height="560" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Enfoque -->
+    <section class="seccion" id="enfoque">
+      <div class="contenedor dos al-reves">
+        <div class="texto revela">
+          <p class="etiqueta etiqueta-tinta">Enfoque</p>
+          <h2>Enfócate boca abajo</h2>
+          <p>Elige cuántos minutos y pon el iPhone boca abajo o bloquéalo: la luna se llena mientras te enfocas. Si te vas a otra app, la cuenta se pausa hasta que vuelvas.</p>
+          <ul class="lista lista-tinta">
+            <li>La cuenta se ve en la Isla Dinámica y en la pantalla bloqueada.</li>
+            <li>Al terminar, tomas la foto de tu tarea.</li>
+          </ul>
+        </div>
+        <div class="visual revela">
+          <div class="telefono"><img src="img/app-enfoque.webp" alt="Enfoque en curso: Mapi lee y la cuenta dice 44:55" width="600" height="1304" loading="lazy"></div>
+          <img class="mapi-lado mapi-der" src="img/mapi-lee.webp" alt="" width="400" height="400" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Racha -->
+    <section class="seccion crema-oscura" id="racha">
+      <div class="contenedor dos">
+        <div class="texto revela">
+          <p class="etiqueta etiqueta-tinta">Tu racha</p>
+          <h2>Una racha con paraguas</h2>
+          <p>Cada día que cumples suma a tu racha. Si un día no alcanzas, un paraguas se abre solo y tu racha sigue.</p>
+          <ul class="lista lista-tinta">
+            <li>Los paraguas se ganan cumpliendo la meta de la semana.</li>
+            <li>Tu progreso muestra cómo vas, día por día.</li>
+          </ul>
+        </div>
+        <div class="visual revela">
+          <div class="telefono"><img src="img/app-racha.webp" alt="Cuida tu racha: tienes 1 de 2 paraguas" width="600" height="1304" loading="lazy"></div>
+          <img class="mapi-lado mapi-izq" src="img/mapi-paraguas.webp" alt="" width="560" height="560" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Colección -->
+    <section class="seccion" id="coleccion">
+      <div class="contenedor">
+        <p class="etiqueta etiqueta-tinta">Lo que ganas cumpliendo</p>
+        <h2>Lunas, ropa y lugares para Mapi</h2>
+        <div class="tarjetas-dos">
+          <article class="tarjeta-grande revela">
+            <div class="tarjeta-texto">
+              <h3>Lunas que se ganan</h3>
+              <p>Al llegar a tus metas de días seguidos, ganas lunas para tu colección.</p>
+            </div>
+            <div class="telefono telefono-chico"><img src="img/app-luna-rosa.webp" alt="Luna rosa: siete días seguidos" width="600" height="1304" loading="lazy"></div>
+          </article>
+          <article class="tarjeta-grande revela">
+            <div class="tarjeta-texto">
+              <h3>Viste a Mapi a tu estilo</h3>
+              <p>Gorros, collares y lugares. Algunas piezas solo se ganan cumpliendo días: la Estrella de oro a los 10, la Corona a los 300.</p>
+            </div>
+            <div class="telefono telefono-chico"><img src="img/app-armario.webp" alt="Armario de Mapi con gorros y piezas por ganar" width="600" height="1304" loading="lazy"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacidad -->
+    <section class="seccion crema-oscura" id="privacidad">
+      <div class="contenedor">
+        <p class="etiqueta etiqueta-tinta">Privacidad</p>
+        <h2>Tus días son tuyos</h2>
+        <div class="cuadros">
+          <div class="cuadro revela">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 8c0-3.3 3.1-6 7-6s7 2.7 7 6"/><path d="M4 4l16 16"/></svg>
+            <h3>Sin cuentas</h3>
+            <p>Abres Mapi y empiezas. No te pedimos correo ni contraseña.</p>
+          </div>
+          <div class="cuadro revela">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 4l16 16"/></svg>
+            <h3>Sin anuncios</h3>
+            <p>Nada se mete entre tú y tus tareas.</p>
+          </div>
+          <div class="cuadro revela">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V9m6 10V5m6 14v-7m4 7H3"/><path d="M4 4l16 16"/></svg>
+            <h3>Sin analíticas</h3>
+            <p>No medimos lo que haces en la app.</p>
+          </div>
+          <div class="cuadro revela">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .6-8A6 6 0 0 0 6 9.5 4.3 4.3 0 0 0 7 18Z"/></svg>
+            <h3>Tu iPhone y tu iCloud</h3>
+            <p>Tus tareas y fotos se guardan en tu iPhone, con respaldo en tu iCloud privado.</p>
+          </div>
+        </div>
+        <p class="centro"><a href="privacidad.html">Lee la política de privacidad</a></p>
+      </div>
+    </section>
+
+    <!-- Mapi Plus -->
+    <section class="seccion" id="plus">
+      <div class="contenedor dos dos-plus">
+        <div class="texto revela">
+          <p class="etiqueta etiqueta-tinta">Mapi Plus</p>
+          <h2>Lo esencial es gratis</h2>
+          <p>El escudo, las fotos y el enfoque son gratis. Mapi Plus agrega widgets, tu progreso por mes y año, y más.</p>
+          <p class="nota">Prueba el plan anual 7 días gratis. El precio sale en tu moneda dentro de la app.</p>
+          <img class="mapi-plus" src="img/mapi-verano.webp" alt="" width="560" height="560" loading="lazy">
+        </div>
+        <div class="tabla-plus revela">
+          <table>
+            <caption class="solo-lector">Qué trae Mapi gratis y qué agrega Mapi Plus</caption>
+            <thead>
+              <tr><th scope="col"><span class="solo-lector">Función</span></th><th scope="col">Gratis</th><th scope="col" class="col-plus">Plus</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Tu progreso</th><td>Semana</td><td class="col-plus">Mes y año</td></tr>
+              <tr><th scope="row">Resumen de la semana</th><td>Básico</td><td class="col-plus">Completo</td></tr>
+              <tr><th scope="row">Widgets</th><td><span class="no" aria-label="No">—</span></td><td class="col-plus"><span class="si" aria-label="Sí">✓</span></td></tr>
+              <tr><th scope="row">Recordatorios</th><td>2 al día</td><td class="col-plus">A tu medida</td></tr>
+              <tr><th scope="row">Enfoque cada semana</th><td><span class="no" aria-label="No">—</span></td><td class="col-plus"><span class="si" aria-label="Sí">✓</span></td></tr>
+              <tr><th scope="row">Mapi revisa tus fotos</th><td><span class="no" aria-label="No">—</span></td><td class="col-plus"><span class="si" aria-label="Sí">✓</span></td></tr>
+              <tr><th scope="row">Consejos para tus tareas</th><td><span class="no" aria-label="No">—</span></td><td class="col-plus"><span class="si" aria-label="Sí">✓</span></td></tr>
+              <tr><th scope="row">Tareas</th><td>Hasta 3</td><td class="col-plus">Sin límite</td></tr>
+              <tr><th scope="row">Paraguas para tu racha</th><td>Hasta 2</td><td class="col-plus">Hasta 4</td></tr>
+              <tr><th scope="row">Armario de Mapi</th><td>3 piezas</td><td class="col-plus">45 piezas</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Preguntas -->
+    <section class="seccion crema-oscura" id="preguntas">
+      <div class="contenedor angosto">
+        <p class="etiqueta etiqueta-tinta">Preguntas</p>
+        <h2>Lo que más nos preguntan</h2>
+        <div class="preguntas">
+          <details>
+            <summary>¿En qué iPhone funciona?</summary>
+            <p>En iPhone con iOS 26 o posterior.</p>
+          </details>
+          <details>
+            <summary>¿Está en español?</summary>
+            <p>Sí. Por ahora Mapi está solo en español.</p>
+          </details>
+          <details>
+            <summary>¿Tengo que crear una cuenta?</summary>
+            <p>No. Abres la app y empiezas.</p>
+          </details>
+          <details>
+            <summary>¿Cómo cubre mis apps?</summary>
+            <p>Con Tiempo en pantalla de Apple. Tú eliges las apps y le das permiso a Mapi. Puedes quitar el permiso cuando quieras desde Ajustes.</p>
+          </details>
+          <details>
+            <summary>¿Qué pasa si un día no cumplo?</summary>
+            <p>Si tienes un paraguas, se abre solo y tu racha sigue. En Tu progreso ese día cuenta como no cumplido, para que veas cómo vas de verdad.</p>
+          </details>
+          <details>
+            <summary>¿Dónde pido ayuda?</summary>
+            <p>En la página de <a href="soporte.html">soporte</a> encuentras más respuestas y nuestro correo.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cierre -->
+    <section class="seccion noche cierre" id="descargar">
+      <div class="estrellas estrellas-suaves" aria-hidden="true"></div>
+      <div class="contenedor centro revela">
+        <img class="mapi-cierre" src="img/mapi-estrellas.webp" alt="Mapi con estrellas en los ojos" width="560" height="560" loading="lazy">
+        <h2>Hoy es un buen día para empezar.</h2>
+        <p class="entrada">Mapi llega muy pronto al App Store. Síguelo en TikTok para saber cuándo.</p>
+        <div class="acciones acciones-centro">
+          <!-- Cuando Mapi esté publicada, cambia este span por:
+               <a class="boton boton-luna" href="https://apps.apple.com/app/id6831907210">Descargar en el App Store</a> -->
+          <span class="boton boton-luna boton-pronto">Muy pronto en el App Store</span>
+          <a class="boton boton-claro" href="https://www.tiktok.com/@mapihabitos" rel="noopener">Sigue a Mapi en TikTok</a>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p><a href="soporte.html">Soporte</a> · <a href="privacidad.html">Política de privacidad</a> · <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Términos de uso (EULA de Apple)</a></p>
+  <footer class="pie">
+    <div class="pie-marca">
+      <img src="mapi.png" alt="" width="28" height="28">
+      <span>Mapi: hábitos con fotos</span>
+    </div>
+    <nav aria-label="Enlaces">
+      <a href="soporte.html">Soporte</a>
+      <a href="privacidad.html">Política de privacidad</a>
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Términos de uso (EULA de Apple)</a>
+      <a href="https://www.tiktok.com/@mapihabitos" rel="noopener">TikTok</a>
+    </nav>
     <p>© 2026 Hector Figueredo Añez</p>
   </footer>
+
+  <script>
+    // Las secciones aparecen suave al llegar a ellas. Sin movimiento si así lo pide el iPhone.
+    (function () {
+      var items = document.querySelectorAll(".revela");
+      var calma = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (calma || !("IntersectionObserver" in window)) {
+        items.forEach(function (el) { el.classList.add("visible"); });
+        return;
+      }
+      var mira = new IntersectionObserver(function (entradas) {
+        entradas.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add("visible"); mira.unobserve(e.target); }
+        });
+      }, { rootMargin: "0px 0px -5% 0px", threshold: 0.08 });
+      items.forEach(function (el) { mira.observe(el); });
+    })();
+  </script>
 </body>
 </html>
