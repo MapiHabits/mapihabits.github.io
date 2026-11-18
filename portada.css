@@ -13,8 +13,6 @@
   --cielo-1: #0B0F2A;
   --cielo-2: #1C2563;
   --cielo-3: #4A3E96;
-  --colina-atras: #2F6B57;
-  --colina-frente: var(--fondo);
   --sombra: 0 26px 60px rgba(18, 22, 58, 0.22);
   --redonda: ui-rounded, "SF Pro Rounded", "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --normal: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -112,7 +110,7 @@ a.boton:hover { transform: translateY(-2px); }
 .hero {
   position: relative; overflow: hidden; color: #FFFFFF;
   background:
-    radial-gradient(1200px 520px at 78% 40%, rgba(255, 200, 61, 0.16), transparent 60%),
+    radial-gradient(1200px 520px at 78% 40%, rgba(255, 200, 61, 0.13), transparent 60%),
     linear-gradient(180deg, var(--cielo-1) 0%, var(--cielo-2) 55%, var(--cielo-3) 100%);
   padding: 48px 20px 0;
 }
@@ -153,7 +151,7 @@ a.boton:hover { transform: translateY(-2px); }
   max-width: var(--ancho); margin: 0 auto;
   display: grid; gap: 8px; align-items: center;
 }
-.hero-texto { text-align: center; }
+.hero-texto { position: relative; z-index: 2; text-align: center; }
 .hero h1 { font-size: clamp(2.5rem, 7.4vw, 4.25rem); margin: 18px 0 16px; text-wrap: balance; }
 .hero mark {
   color: var(--tinta);
@@ -165,34 +163,30 @@ a.boton:hover { transform: translateY(-2px); }
 .hero .acciones { justify-content: center; }
 .nota-hero { color: #B8BEE3; font-size: 0.92rem; margin-top: 16px; }
 
-.hero-escena { position: relative; height: clamp(300px, 78vw, 470px); margin-top: 8px; }
+/* La escena es un solo dibujo de 500 × 520: Mapi sentado en la cima de su colina, con la luna detrás.
+   El suelo sigue de lado a lado, por debajo del texto, y termina en la ola crema de la siguiente sección. */
+.hero-escena {
+  position: relative; z-index: 1;
+  width: min(100%, 460px); aspect-ratio: 500 / 520;
+  margin: 4px auto 0;
+}
+/* La luna de siempre, con el brillo un poco más bajo (18 nov). Sale detrás de los cerros del dibujo. */
 .luna {
-  position: absolute; left: 50%; top: 4%; transform: translateX(-50%);
-  width: min(78%, 380px); aspect-ratio: 1; border-radius: 50%;
+  position: absolute; left: 20%; top: 10.58%;
+  width: 60%; aspect-ratio: 1; border-radius: 50%;
   background:
-    radial-gradient(circle at 30% 28%, rgba(255, 255, 255, 0.55), transparent 32%),
+    radial-gradient(circle at 30% 28%, rgba(255, 255, 255, 0.5), transparent 32%),
     radial-gradient(circle at 68% 64%, rgba(233, 170, 30, 0.35) 0 9%, transparent 10%),
     radial-gradient(circle at 34% 70%, rgba(233, 170, 30, 0.3) 0 6%, transparent 7%),
     radial-gradient(circle at 72% 30%, rgba(233, 170, 30, 0.28) 0 5%, transparent 6%),
     radial-gradient(circle at 50% 50%, var(--luna-clara), var(--luna) 70%);
-  box-shadow: 0 0 80px 18px rgba(255, 200, 61, 0.42), 0 0 220px 60px rgba(255, 200, 61, 0.16);
+  box-shadow: 0 0 80px 18px rgba(255, 200, 61, 0.34), 0 0 220px 60px rgba(255, 200, 61, 0.13);
 }
-.colinita {
-  position: absolute; left: 50%; bottom: -40px; transform: translateX(-50%);
-  width: min(120%, 620px); height: 120px; border-radius: 50%;
-  background: radial-gradient(closest-side, #3B8462, #2F6B57);
-}
-.mapi-hero {
-  position: absolute; left: 50%; bottom: 6px; transform: translateX(-50%);
-  width: min(92%, 430px);
-  filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.35));
-  animation: flota 4.5s ease-in-out infinite;
-}
-@keyframes flota { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -8px); } }
-
-.colinas { position: relative; z-index: 2; display: block; width: calc(100% + 40px); height: clamp(60px, 9vw, 130px); margin: -40px -20px 0; }
-.colina-atras { fill: var(--colina-atras); }
-.colina-frente { fill: var(--colina-frente); }
+.escena { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+/* Mapi ya no flota: respira, con los pies en la colina. */
+.mapi { transform-box: fill-box; transform-origin: 50% 96%; animation: respira 5s ease-in-out infinite; }
+@keyframes respira { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.01, 1.016); } }
+.suelo-espacio { height: 64px; }
 
 @media (min-width: 900px) {
   .hero { padding: 72px 32px 0; }
@@ -200,8 +194,10 @@ a.boton:hover { transform: translateY(-2px); }
   .hero-texto { text-align: left; padding-bottom: 56px; }
   .entrada { margin-left: 0; }
   .hero .acciones { justify-content: flex-start; }
-  .hero-escena { height: 520px; margin-top: 0; }
-  .colinas { width: calc(100% + 64px); margin: -60px -32px 0; }
+  .hero-escena { width: 100%; margin: 0; }
+  .suelo-espacio { height: 84px; }
+  /* Los cerros de atrás se desvanecen antes de llegar al texto. */
+  .lejos { mask: url(#desvanece); }
 }
 
 /* Secciones */
@@ -363,7 +359,7 @@ a.boton:hover { transform: translateY(-2px); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .estrellas, .estrellas-2, .mapi-hero, .mapi-cierre { animation: none; }
+  .estrellas, .estrellas-2, .mapi, .mapi-cierre { animation: none; }
   .js .revela { opacity: 1; transform: none; transition: none; }
   a.boton:hover { transform: none; }
 }
