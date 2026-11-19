@@ -91,6 +91,19 @@ a.boton:hover { transform: translateY(-2px); }
    entre botones (12 px) le dejan el margen libre que pide Apple: un cuarto de su alto. */
 .sello-tienda { display: inline-flex; margin: 1px; border-radius: 10px; }
 .sello-tienda img { display: block; width: auto; height: 52px; }
+/* Junto al sello, lo demás es un enlace con flechita, para que el sello sea el único botón (19 nov). */
+.hero .acciones, .cierre .acciones { align-items: center; gap: 18px 22px; }
+.hero .acciones .boton-claro, .cierre .acciones .boton-claro {
+  padding: 0 4px; background: none; box-shadow: none; border-radius: 6px;
+  font-family: var(--normal); font-weight: 600; font-size: 1.05rem; color: #FFFFFF;
+}
+.hero .acciones .boton-claro::after, .cierre .acciones .boton-claro::after {
+  content: ""; width: 8px; height: 8px; margin-left: 2px; opacity: 0.85;
+  border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-3px);
+}
+.cierre .acciones .boton-claro::after { transform: rotate(-45deg); }
+.hero .acciones a.boton-claro:hover, .cierre .acciones a.boton-claro:hover { transform: none; color: var(--luna-clara); }
 .acciones { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
 .acciones-centro { justify-content: center; }
 
