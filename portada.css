@@ -87,9 +87,8 @@ p { margin: 10px 0; }
 .boton-claro { background: rgba(255, 255, 255, 0.12); color: #FFFFFF; box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.45); }
 a.boton:hover { transform: translateY(-2px); }
 .boton-chico { min-height: 38px; padding: 0 16px; font-size: 0.92rem; box-shadow: none; }
-.boton-pronto { cursor: default; }
 /* Una lunita creciente antes del texto. */
-.boton-pronto::before {
+.boton-tienda::before {
   content: ""; width: 15px; height: 15px; border-radius: 50%;
   box-shadow: inset 4px -2px 0 0 var(--tinta);
   transform: rotate(-20deg);
