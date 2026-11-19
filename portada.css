@@ -87,12 +87,10 @@ p { margin: 10px 0; }
 .boton-claro { background: rgba(255, 255, 255, 0.12); color: #FFFFFF; box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.45); }
 a.boton:hover { transform: translateY(-2px); }
 .boton-chico { min-height: 38px; padding: 0 16px; font-size: 0.92rem; box-shadow: none; }
-/* Una lunita creciente antes del texto. */
-.boton-tienda::before {
-  content: ""; width: 15px; height: 15px; border-radius: 50%;
-  box-shadow: inset 4px -2px 0 0 var(--tinta);
-  transform: rotate(-20deg);
-}
+/* El sello oficial de Apple, tal cual: sin animarlo ni cambiarle colores. El margen de 1 px más el espacio
+   entre botones (12 px) le dejan el margen libre que pide Apple: un cuarto de su alto. */
+.sello-tienda { display: inline-flex; margin: 1px; border-radius: 10px; }
+.sello-tienda img { display: block; width: auto; height: 52px; }
 .acciones { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
 .acciones-centro { justify-content: center; }
 
